@@ -9,30 +9,36 @@ interface Props {
 const SummaryCard: React.FC<Props> = ({ data, variant = 'metal' }) => {
   const isMetal = variant === 'metal';
   
+  // Define colors based on variant
+  const dotColor = isMetal ? 'bg-indigo-500' : 'bg-teal-500';
+  const badgeBg = isMetal ? 'bg-indigo-50 text-indigo-700 border-indigo-100' : 'bg-teal-50 text-teal-700 border-teal-100';
+  const hoverBorder = isMetal ? 'group-hover:border-indigo-200' : 'group-hover:border-teal-200';
+  const hoverShadow = isMetal ? 'group-hover:shadow-indigo-50' : 'group-hover:shadow-teal-50';
+
   return (
     <div className={`
-      relative p-3 md:p-5 rounded-xl border flex flex-col justify-between h-auto min-h-[5rem] md:h-28 transition-all duration-300 hover:-translate-y-1 hover:shadow-md
-      bg-white border-slate-100 shadow-sm
+      group relative p-4 rounded-2xl border bg-white border-slate-100 
+      transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${hoverBorder} ${hoverShadow}
+      flex flex-col justify-between h-auto min-h-[6.5rem] overflow-hidden
     `}>
-      {/* Top accent bar */}
-      <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-xl ${isMetal ? 'bg-gradient-to-r from-indigo-500 to-blue-400' : 'bg-gradient-to-r from-teal-400 to-emerald-500'}`} />
-      
-      <div className="flex flex-col mt-1">
-        <div className="flex justify-between items-start">
-            <span className="text-slate-500 text-xs md:text-sm font-medium">{data.name}</span>
-            {data.subName && (
-            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${isMetal ? 'bg-indigo-50 text-indigo-600' : 'bg-teal-50 text-teal-600'}`}>
-                {data.subName}
-            </span>
-            )}
-        </div>
+      <div className="flex justify-between items-start mb-3 relative z-10">
+         <div className="flex items-center gap-2">
+            <div className={`w-2 h-2 rounded-full ${dotColor} shadow-sm`} />
+            <span className="text-slate-500 text-sm font-semibold">{data.name}</span>
+         </div>
+         {data.subName && (
+           <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold border ${badgeBg}`}>
+             {data.subName}
+           </span>
+         )}
       </div>
       
-      <div className="mt-2">
-        <div className={`font-bold text-slate-800 text-lg md:text-2xl leading-tight tracking-tight break-words ${data.value.length > 8 ? 'text-base md:text-xl' : ''}`}>
-          {data.value}
-        </div>
+      <div className={`font-extrabold text-slate-800 text-xl md:text-2xl tracking-tight leading-none relative z-10 ${data.value.length > 8 ? 'text-lg md:text-xl' : ''}`}>
+        {data.value}
       </div>
+      
+      {/* Decorative gradient blob on hover for subtle effect */}
+      <div className={`absolute -right-4 -bottom-4 w-20 h-20 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-2xl ${isMetal ? 'bg-indigo-500' : 'bg-teal-500'} pointer-events-none`} />
     </div>
   );
 };

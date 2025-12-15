@@ -6,25 +6,22 @@ import { RESOURCE_SITES, RESOURCE_SUMMARY, SALT_LAKE_SUMMARY, MINING_LICENSES, E
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 py-4 px-2 sm:py-10 sm:px-6 lg:px-8 font-sans">
-      <div className="max-w-6xl mx-auto space-y-8 md:space-y-12">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 py-6 px-3 sm:py-10 sm:px-6 lg:px-8 font-sans bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] overflow-x-hidden">
+      <div className="max-w-6xl mx-auto space-y-10 md:space-y-14">
         
-        {/* Header Title (Optional, added for completeness) */}
-        <header className="mb-6 md:mb-10 px-1">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
-            2025年第三季度 <span className="text-blue-600">资源报告</span>
+        {/* Header Title (Optional wrapper) */}
+        <header className="mb-8 md:mb-12 px-1 hidden md:block">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+            2025年第三季度资源报告
           </h1>
-          <p className="text-slate-500 text-xs md:text-sm mt-2">
-            矿产资源保有量与矿业权证统计概览
-          </p>
         </header>
 
         {/* Section 1: Resource Sites */}
         <section>
-          <div className="flex items-center mb-4 px-1">
-            <div className="w-1 h-6 bg-blue-600 rounded-full mr-3"></div>
-            <h2 className="text-lg md:text-xl font-bold text-slate-800">
-              各矿区保有资源量
+          <div className="flex items-center mb-5 px-1">
+            <div className="w-1.5 h-6 md:h-7 bg-blue-600 rounded-full mr-3 shadow-sm"></div>
+            <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight">
+              25年第三季度末保有资源量
             </h2>
           </div>
           {/* Force 2 columns on mobile, optimized gap */}
@@ -37,10 +34,10 @@ function App() {
 
         {/* Section 2: Resource Summary */}
         <section>
-          <div className="flex items-center mb-4 px-1">
-            <div className="w-1 h-6 bg-indigo-600 rounded-full mr-3"></div>
-            <h2 className="text-lg md:text-xl font-bold text-slate-800">
-              资源量汇总 <span className="text-slate-400 font-normal text-sm ml-2">金属矿产</span>
+          <div className="flex items-center mb-5 px-1">
+            <div className="w-1.5 h-6 md:h-7 bg-indigo-600 rounded-full mr-3 shadow-sm"></div>
+            <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight">
+              25年第三季度末保有资源量汇总
             </h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-5">
@@ -52,10 +49,10 @@ function App() {
 
         {/* Section 3: Salt Lake Summary */}
         <section>
-          <div className="flex items-center mb-4 px-1">
-            <div className="w-1 h-6 bg-teal-500 rounded-full mr-3"></div>
-            <h2 className="text-lg md:text-xl font-bold text-slate-800">
-              资源量汇总 <span className="text-slate-400 font-normal text-sm ml-2">盐湖资源</span>
+          <div className="flex items-center mb-5 px-1">
+            <div className="w-1.5 h-6 md:h-7 bg-teal-500 rounded-full mr-3 shadow-sm"></div>
+            <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight">
+              25年第三季度末盐湖保有资源量汇总
             </h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-5">
@@ -67,10 +64,10 @@ function App() {
 
         {/* Section 4: Mining Rights/Licenses */}
         <section>
-           <div className="flex items-center mb-4 px-1">
-            <div className="w-1 h-6 bg-amber-500 rounded-full mr-3"></div>
-            <h2 className="text-lg md:text-xl font-bold text-slate-800">
-              矿业权证概览
+           <div className="flex items-center mb-5 px-1">
+            <div className="w-1.5 h-6 md:h-7 bg-amber-500 rounded-full mr-3 shadow-sm"></div>
+            <h2 className="text-xl md:text-2xl font-extrabold text-slate-800 tracking-tight">
+              矿业权证
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -80,8 +77,8 @@ function App() {
         </section>
 
         {/* Footer */}
-        <footer className="text-center py-8 border-t border-slate-200 mt-12">
-          <p className="text-slate-400 text-xs">
+        <footer className="text-center py-10 border-t border-slate-200 mt-16">
+          <p className="text-slate-400 text-xs md:text-sm">
             © 2025 Resource Management Report. All rights reserved.
           </p>
         </footer>

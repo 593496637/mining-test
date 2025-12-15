@@ -17,7 +17,8 @@ const LicenseList: React.FC<Props> = ({ data }) => {
         </span>
       </div>
       
-      <div className="space-y-3 max-h-[400px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
+      {/* Removed max-h and overflow-y-auto to allow full expansion */}
+      <div className="space-y-3">
         {data.items.map((item, idx) => (
           <div key={idx} className="group p-3 rounded-lg border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all">
             <div className="font-semibold text-slate-800 text-sm mb-2 group-hover:text-blue-700 transition-colors">
